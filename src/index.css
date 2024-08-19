@@ -1,13 +1,221 @@
-body {
-  margin: 0;
+body{
+  width: 100vw;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #F5F5F5;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(4, 1fr)
+}
+
+p, header, body, div {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  font-weight: bold;
+  font-size:16px;
+  text-decoration: none;
+  color: #6b6b6b;
+}
+
+a:hover{
+  color: #181818;
+
+}
+
+
+
+.App{
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.logo{
+  grid-area: logo;
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+.header__nav{
+  grid-area: nav-bar;
+  display: flex;
+  justify-content: space-around;
+  gap: 40px;
+}
+
+
+.header {
+  grid-column-start: 1;
+  grid-column-end: 17;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  background-color: #ffffff;
+  font-size: 20px;
+  padding: 0px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-box-shadow: 0px 0px 6px 0px rgba(173,173,173,0.4);
+  -moz-box-shadow: 0px 0px 6px 0px rgba(173,173,173,0.4);
+  box-shadow: 0px 0px 6px 0px rgba(173,173,173,0.4);
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.logo-image{
+  height: 32px;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.main {
+  border-radius: 8px;
+  grid-column-start: 4;
+  grid-column-end: 14;
+  grid-row-start: 4;
+  grid-row-end: 14;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+  box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+}
+
+.form-area {
+  grid-column-start: 2;
+  grid-column-end: 16;
+  grid-row-start: 1;
+  grid-row-end: fill;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  row-gap: 12px;
+  padding: 24px;
+}
+
+.title{
+  font-size: 20px;
+  font-weight: bold;
+  grid-row-start: 1;
+  grid-row-end: 1;
+  grid-column-start: 1;
+  grid-column-end: 16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-area{
+  grid-area: upload-area;
+  grid-row-start: 2;
+  grid-row-end: 6;
+  grid-column-start: 1;
+  grid-column-end: 16;
+  border: 2px dashed rgb(73, 122, 151);
+  background-color: #bacbdb0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-area-active{
+  background-color: #6a737c41;
+  cursor: pointer;
+}
+
+.upload-area:hover{
+  background-color: #bacbdb23;
+  cursor: pointer;
+}
+
+.upload-button {
+  background-color: #31768f;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 8px;
+  margin: 8px;
+  border-radius: 4px;
+  border: 1px solid #31768f;
+}
+
+.upload-button:hover {
+  background-color: #285c6f;
+}
+
+.airline-area{
+  grid-area: airline-area;
+  grid-row-start:6 ;
+  grid-row-end: 8;
+  grid-column-start: 1;
+  grid-column-end: 16;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.airline-select{
+  width: 100%;
+  height: 38%;
+  font-size: 16px;
+  margin-top: 8px;
+  padding: 8px;
+}
+
+.airline-select:focus {
+  outline: 1px solid #5792a8;
+  border-radius: 4px;
+}
+
+.airline-select:hover{
+  cursor: pointer;
+}
+
+.convert-button{
+grid-area: airline-area;
+grid-row-start: 8;
+grid-row-end: 8;
+grid-column-start: 1;
+grid-column-end: 16;
+background-color: #203145;
+color: #ffffff;
+font-weight: 600;
+font-size: 16px;
+width: 100%;
+border-radius: 4px;
+}
+
+.convert-button:hover {
+background-color: #0a1e38;
+cursor: pointer;
+}
+
+.convert-button:disabled {
+  background-color: #66666674;
+  cursor: no-drop;
+  }
+
+
