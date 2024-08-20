@@ -17,13 +17,43 @@ function App() {
   const [uploadedFiles, setUploadedFiles] = useState([]);
   const { getRootProps, getInputProps } = useDropzone({
     onDrop: (acceptedFiles) => {
-      console.log(acceptedFiles)
       setUploadedFiles(acceptedFiles)
       setIsDraggingFile(false)
     },
     onDragOver: () => setIsDraggingFile(true),
     onDragLeave: () => setIsDraggingFile(false),
   });
+
+  const handleConvertClick = async (e) => {
+    e.preventDefault()
+
+    if (uploadedFiles.length === 0 || choosenAirline.id === "1") return;
+
+    const formData = new FormData();
+    formData.append("file", uploadedFiles[0]);
+
+    try {
+      const response = await fetch("http://localhost:8000/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(new Blob([blob]));
+        const link = document.createElement("a");
+        link.href = url;
+        link.setAttribute("download", "manifest.xlsx");
+        document.body.appendChild(link);
+        link.click();
+        link.parentNode.removeChild(link);
+      } else {
+        window.alert("Erro na conversão do manifesto");
+      }
+    } catch (error) {
+      window.alert("Erro ao enviar o arquivo:", error);
+    }
+  };
 
   return (
     <div className="App">
@@ -58,7 +88,7 @@ function App() {
               ))}
             </select>
           </div>
-          <input type="submit" value="Convert" className="convert-button" disabled={!uploadedFiles.length || choosenAirline.id === "1"} />
+          <input type="submit" value="Convert" className="convert-button" disabled={!uploadedFiles.length || choosenAirline.id === "1"} onClick={handleConvertClick}/>
         </form>
       </main>
     </div>
