@@ -194,6 +194,12 @@ h1 {
   cursor: pointer;
 }
 
+.error-message{
+  color: #c80606;
+  font-weight:500;
+  padding: 5px;
+}
+
 .convert-button{
 grid-area: airline-area;
 grid-row-start: 8;
