@@ -45,7 +45,7 @@ const AWB = () => {
     formData.append("file", uploadedFiles[0]);
 
     try {
-      const response = await fetch("http://localhost:8000/upload", {
+      const response = await fetch("https://cargo-manifest-api-e9624b976b19.herokuapp.com/upload", {
         method: "POST",
         body: formData,
       });
