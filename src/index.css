@@ -222,6 +222,106 @@ cursor: pointer;
 .convert-button:disabled {
   background-color: #66666674;
   cursor: no-drop;
-  }
+}
 
+.crossdocking-page{
+  border-radius: 8px;
+  grid-column-start: 4;
+  grid-column-end: 14;
+  grid-row-start: 3;
+  grid-row-end: 16;
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+  box-shadow: 0px 0px 8px 0px rgba(173,173,173,0.53);
+}
 
+.crossdocking-area{
+  grid-column-start: 2;
+  grid-column-end: 16;
+  grid-row-start: 1;
+  grid-row-end: fill;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  row-gap: 12px;
+  padding: 24px;
+}
+
+.crossdocking-upload-area{
+  grid-area: upload-area;
+  grid-row-start: 2;
+  grid-row-end: 5;
+  grid-column-start: 1;
+  grid-column-end: 16;
+  border: 2px dashed rgb(73, 122, 151);
+  background-color: #bacbdb0d;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.crossdocking-upload-area-active{
+  background-color: #6a737c41;
+  cursor: pointer;
+}
+
+.crossdocking-upload-area:hover{
+  background-color: #bacbdb23;
+  cursor: pointer;
+}
+
+.crossdocking-button{
+grid-area: airline-area;
+grid-row-start: 11;
+grid-row-end: 16;
+grid-column-start: 1;
+grid-column-end: 16;
+background-color: #203145;
+color: #ffffff;
+font-weight: 600;
+font-size: 16px;
+width: 100%;
+border-radius: 4px;
+}
+
+.crossdocking-button:hover {
+  background-color: #285c6f;
+}
+
+.crossdocking-button:disabled {
+  background-color: #66666674;
+  cursor: no-drop;
+}
+
+.priorities-area {
+  display: flex;
+  flex-direction: column;
+  grid-column-start: 1;
+  grid-column-end: 16;
+  grid-row-start: 5;
+  grid-row-end: 9;
+  flex-grow: 1;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+.priorities-textarea {
+  margin-top: 8px;
+  display: flex;
+  flex-grow: 1;
+}
+
+textarea.textarea {
+  width: 100%;
+  height: 100%;
+  resize: none;
+  padding: 15px;
+  border: none;
+  border-radius: 4px;
+  border: 2px solid rgb(73, 122, 151);
+  font-size: 16px;
+}
