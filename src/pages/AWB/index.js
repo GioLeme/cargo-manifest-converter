@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
-// import './index.css';
 
 
 const airlines = [
