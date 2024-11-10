@@ -11,7 +11,7 @@ function App() {
         <header className="header" >
           <div className="logo" >
             <img src={logo} alt="logo" className="logo-image" />
-            <h1>Import JIT Handling</h1>
+            <h1>Import - JIT Handling</h1>
           </div>
           <nav className="header__nav">
             <NavLink
