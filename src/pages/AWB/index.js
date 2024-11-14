@@ -4,8 +4,8 @@ import { useDropzone } from "react-dropzone";
 
 const airlines = [
   { id: "1", text: "choose an option" },
-  { id: "2", text: "QR - Qatar", extensions: "PDF" },
-  { id: "3", text: "5Y - Atlas", extensions: "PDF" },
+  { id: "2", text: "ACL Manifest", extensions: "PDF" },
+  // { id: "3", text: "5Y - Atlas", extensions: "PDF" },
 ]
 
 
@@ -79,7 +79,7 @@ const AWB = () => {
           <p>{uploadedFiles[0]?.path}</p>
         </div>
         <div className="airline-area">
-          <p>Select Airline:</p>
+          <p>Select Handling / Airline:</p>
           <select
             className="airline-select"
             id="mySelect"
